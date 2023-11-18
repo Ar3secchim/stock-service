@@ -5,14 +5,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import tech.ada.tenthirty.ecommerce.model.Item;
 import tech.ada.tenthirty.ecommerce.model.ItemReservado;
 import tech.ada.tenthirty.ecommerce.payload.ItemRequest;
 import tech.ada.tenthirty.ecommerce.payload.ReservaRequest;
 import tech.ada.tenthirty.ecommerce.payload.response.ItemResponse;
-import tech.ada.tenthirty.ecommerce.repository.ItemRepository;
 import tech.ada.tenthirty.ecommerce.repository.ItemReservadoRepository;
 
 import java.time.LocalDateTime;

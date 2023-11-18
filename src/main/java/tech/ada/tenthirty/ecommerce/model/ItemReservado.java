@@ -21,16 +21,13 @@ public class ItemReservado {
 
     private String sku;
 
-    private BigDecimal valorUnitario;
+    private BigDecimal price;
 
-    private Integer quantidadeReservada;
-
+    private Integer quantityStock;
 
     private String compraId;
 
-    private String identificador;
-
     public Integer getQuantidadeReservada() {
-        return Objects.isNull(quantidadeReservada)?0:quantidadeReservada;
+        return Objects.isNull(quantityStock)?0:quantityStock;
     }
 }

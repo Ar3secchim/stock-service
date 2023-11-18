@@ -1,7 +1,6 @@
 package tech.ada.tenthirty.ecommerce.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.ada.tenthirty.ecommerce.model.ItemReservado;
 import tech.ada.tenthirty.ecommerce.payload.ItemRequest;
@@ -11,7 +10,6 @@ import tech.ada.tenthirty.ecommerce.repository.ItemReservadoRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,8 +35,7 @@ public class ReservarItensService {
                 ItemReservado itemReservado = new ItemReservado();
                 itemReservado.setCompraId(reservaRequest.getCompraId());
                 itemReservado.setSku(entry.getKey());
-                itemReservado.setIdentificador(UUID.randomUUID().toString());
-                itemReservado.setQuantidadeReservada(quantidadeSolicitada);
+                itemReservado.setQuantityStock(quantidadeSolicitada);
                 itemReservadoRepository.save(itemReservado);
             }else{
                 skuIndisponiveis.add(entry.getKey());

@@ -20,7 +20,7 @@ public class ConsultarQuantidadeItemService {
         itemResponse.setSkuId(sku);
         int quantidadeTotal = itemRepository.findBySku(sku)
                 .orElseThrow(() -> new NotFoundException(sku, Item.class))
-                .getQuantidadeEstoque();
+                .getQuantityStock();
         int quantidadesReservadas = itemReservadoRepository.findBySku(sku)
                 .stream().mapToInt(ItemReservado::getQuantidadeReservada)
                 .sum();

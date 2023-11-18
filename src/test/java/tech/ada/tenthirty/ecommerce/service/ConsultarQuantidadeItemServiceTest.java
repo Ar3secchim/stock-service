@@ -1,12 +1,9 @@
 package tech.ada.tenthirty.ecommerce.service;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tech.ada.tenthirty.ecommerce.exception.NotFoundException;
 import tech.ada.tenthirty.ecommerce.model.Item;
@@ -40,7 +37,7 @@ public class ConsultarQuantidadeItemServiceTest {
     @Test
     void shouldReturnACalculationOfAnItemReservedAndTheQuantityStored(){
         Item item = mock(Item.class);
-        when(item.getQuantidadeEstoque()).thenReturn(12);
+        when(item.getQuantityStock()).thenReturn(12);
         ItemReservado itemReservado = mock(ItemReservado.class);
         when(itemReservado.getQuantidadeReservada()).thenReturn(10);
 
@@ -57,7 +54,7 @@ public class ConsultarQuantidadeItemServiceTest {
     @Test
     void shouldReturnTheQuantityStored(){
         Item item = mock(Item.class);
-        when(item.getQuantidadeEstoque()).thenReturn(12);
+        when(item.getQuantityStock()).thenReturn(12);
 
         when(itemRepository.findBySku(anyString()))
                 .thenReturn(Optional.of(item));
@@ -78,8 +75,4 @@ public class ConsultarQuantidadeItemServiceTest {
        assertThrows(NotFoundException.class, ()-> consultarQuantidadeItemService.execute("1234"));
 
     }
-
-
-
-
 }

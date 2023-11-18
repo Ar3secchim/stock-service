@@ -7,8 +7,6 @@ import tech.ada.tenthirty.ecommerce.payload.ItemRequest;
 import tech.ada.tenthirty.ecommerce.payload.response.ItemResponse;
 import tech.ada.tenthirty.ecommerce.repository.ItemRepository;
 
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -18,9 +16,8 @@ public class AdicionarProdutoService {
     public ItemResponse execute(ItemRequest itemRequest){
         Item item = new Item();
         item.setSku(itemRequest.getSkuId());
-        item.setQuantidadeEstoque(itemRequest.getQuantidade());
-        item.setValorUnitario(BigDecimal.ZERO);
-        item.setIdentificador(UUID.randomUUID().toString());
+        item.setQuantityStock(itemRequest.getQuantidade());
+        item.setPrice(0.0);
         itemRepository.save(item);
 
         ItemResponse itemResponse = new ItemResponse();
