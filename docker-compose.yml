@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  ecommerce_compra_db:
+    image: postgres:10
+    environment:
+      POSTGRES_PASSWORD: stock
+      POSTGRES_USER: stock
+      POSTGRES_DB: stock
+    ports:
+      - "5433:5432"

@@ -1,0 +1,52 @@
+server:
+  servlet:
+    context-path: /
+  port: 9081
+  compression:
+    mime-types:
+      - application/json
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://localhost:5433/stock
+    username: stock
+    password: stock
+  application:
+    name: ecommerce-estoque-service
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    format-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+
+  liquibase:
+    enabled: false
+    change-log: classpath:db/changelog/changelog-local.xml
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guess
+    password: guess
+    cache:
+      connection:
+        mode: CONNECTION
+      channel:
+        size: 50
+      checkout-timeout: 10000
+
+  config:
+    stock:
+      url: http://localhost:9081
+    fila:
+      reservation:
+        in: reservation_stock

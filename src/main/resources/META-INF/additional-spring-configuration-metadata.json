@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "spring.jpa.format-sql",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.format-sql'"
+  },
+  {
+    "name": "spring.rabbitmq.cache.checkout-timeout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.rabbitmq.cache.checkout-timeout'"
+  },
+  {
+    "name": "spring.config.fila.reservation.out",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.fila.reservation.out'"
+  },
+  {
+    "name": "spring.config.stock.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.stock.url'"
+  },
+  {
+    "name": "spring.config.fila.reservation.in",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.fila.reservation.in'"
+  }
+]}
